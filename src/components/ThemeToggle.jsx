@@ -6,7 +6,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="fixed top-4 right-4 bg-gray-200 dark:bg-grap-800 text-sm px-3 py-1"
+      className="fixed top-4 right-4 bg-gray-200 dark:bg-gray-800 text-sm px-3 py-1"
     >
       {darkMode ? "Light" : "Dark"}
     </button>

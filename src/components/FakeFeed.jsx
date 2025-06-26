@@ -1,6 +1,6 @@
 import FakePost from "./FakePost";
 import { useState, useEffect } from "react";
-import { generatedFakePosts } from "../data/generatedFakePosts";
+import { generateFakePosts } from "../data/generateFakePosts";
 
 export default function FakeFeed() {
   const [posts, setPosts] = useState([]);
@@ -10,10 +10,10 @@ export default function FakeFeed() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await fetch("https://rendomuser.me/api/?results = 5");
+        const res = await fetch("https://randomuser.me/api/?results=5");
         if (!res.ok) throw new Error("Failed to fetch users.");
         const data = await res.json();
-        const fakePosts = generatedFakePosts(data.results);
+        const fakePosts = generateFakePosts(data.results);
         setPosts(fakePosts);
       } catch (err) {
         setError(err.message);
@@ -21,6 +21,7 @@ export default function FakeFeed() {
         setLoading(false);
       }
     };
+
     fetchUsers();
   }, []);
 
@@ -30,7 +31,7 @@ export default function FakeFeed() {
   return (
     <div className="max-w-2xl mx-auto mt-8 space-y-6">
       {posts.map((post) => (
-        <FakePost ley={post.id} post={post} />
+        <FakePost key={post.id} post={post} />
       ))}
     </div>
   );

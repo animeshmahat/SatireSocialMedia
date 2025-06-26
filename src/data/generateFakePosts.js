@@ -12,9 +12,9 @@ const randomSentences = [
   "Mood: Influencer but broke.",
 ];
 
-export const generatedFakePosts = (users) => {
-  return users.map((user, i) => ({
-    id: 1,
+export const generateFakePosts = (users) => {
+  return users.map((user) => ({
+    id: user.login.uuid,
     name: `${user.name.first} ${user.name.last}`,
     avatar: user.picture.thumbnail,
     content:

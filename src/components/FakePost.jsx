@@ -22,17 +22,17 @@ export default function FakePost({ post }) {
       <div className="flex justify-around text-sm text-gray-700 dark:text-gray-300">
         <div className="flex items-center gap-1">
           <ThumbsUp size={16} />
-          {post.metrics.likes} Likes
+          {post.metrics?.likes ?? 0} Likes
         </div>
 
         <div className="flex items-center gap-1">
           <MessageCircle size={16} />
-          {post.metrics.comments} Comments
+          {post.metrics?.comments ?? 0} Comments
         </div>
 
         <div className="flex items-center gap-1">
           <Share2 size={16} />
-          {post.metrics.shares} Shares
+          {post.metrics?.shares ?? 0} Shares
         </div>
       </div>
     </div>
