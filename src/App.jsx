@@ -1,6 +1,7 @@
 import ThemeToggle from "./components/ThemeToggle";
 import AnalyticsCard from "./components/AnalyticsCard";
 import FakeFeed from "./components/FakeFeed";
+import Notifications from "./components/Notifications";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
           Where analytics are made up and likes donot matter.
         </p>
       </div>
+      <Notifications />
       <AnalyticsCard />
       <FakeFeed />
 
